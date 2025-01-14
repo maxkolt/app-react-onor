@@ -1,32 +1,39 @@
-import React, {useState} from 'react';
-import Button from "../Button/Button";
-import './ProductItem.css';
-
+import React, { useState } from "react";
+import "./ProductItem.css";
 
 const ProductItem = ({ product, onAdd }) => {
-  const [isAdded, setIsAdded] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
 
-  const handleAdd = () => {
-    onAdd(product);
-    setIsAdded(!isAdded);
+  const handleWrite = () => {
+    window.location.href = "https://t.me/max12kolt";
+  };
+
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed);
   };
 
   return (
     <div className="product-card">
-      <img src={product.img} alt={product.title} className="product-image" />
+      <div
+        className={`image-container ${isZoomed ? "zoomed" : ""}`}
+        onClick={handleImageClick}
+      >
+        <img src={product.img} alt={product.title} className="product-image" />
+      </div>
       <div className="product-details">
         <h3 className="product-title">{product.title}</h3>
-        <p className="product-description">{product.description}</p>
+        <div className="product-description">
+          {product.description}
+        </div>
         <div className="product-footer">
           <span className="product-price">{product.price} ₽</span>
-          <button className="add-to-cart-btn" onClick={handleAdd}>
-            {isAdded ? "Удалить" : "Добавить"}
+          <button className="write-button" onClick={handleWrite}>
+            Написать
           </button>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default ProductItem;
