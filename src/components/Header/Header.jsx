@@ -9,9 +9,9 @@ const Header = () => {
 
   return (
     <div className={'header'}>
-      <span className={'app-name'}>ONOR_Shop</span>
       <Button onClick={onClose} className={'close-button'}>Закрыть</Button>
-      <span className={'username'}>{user?.username}</span>
+      <span className={'app-name'}>ONOR_Shop</span>
+      <link className={'username'}>{user?.username}</link>
     </div>
   );
 };
