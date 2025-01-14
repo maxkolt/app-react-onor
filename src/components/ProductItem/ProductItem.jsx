@@ -4,10 +4,11 @@ import './ProductItem.css';
 
 const ProductItem = ({product, className, onAdd}) => {
 
-    const onAddHandler = () => {
-        onAdd(product);
-    }
+  const onAddHandler = () => {
+    window.location.href = 'https://t.me/max12kolt';
+    onAdd(product);
 
+  };
     return (
         <div className={'product ' + className}>
             <div className={'img'}/>
@@ -17,7 +18,7 @@ const ProductItem = ({product, className, onAdd}) => {
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
             <Button className={'add-btn'} onClick={onAddHandler}>
-                Добавить в корзину
+                Написать
             </Button>
         </div>
     );
