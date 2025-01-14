@@ -1,26 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from "../Button/Button";
 import './ProductItem.css';
 
-const ProductItem = ({ product, className, onAdd }) => {
-  const onAddHandler = () => {
-    onAdd(product); // Сначала добавляем товар
-    window.location.href = 'https://t.me/max12kolt'; // Затем выполняем редирект
+
+const ProductItem = ({ product, onAdd }) => {
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAdd = () => {
+    onAdd(product);
+    setIsAdded(!isAdded);
   };
 
   return (
-    <div className={'product ' + className}>
-      <img src={product.img} alt={product.title} className={'product-img'} />
-      <div className={'title'}>{product.title}</div>
-      <div className={'description'}>{product.description}</div>
-      <div className={'price'}>
-        <span>Стоимость: <b>{product.price} ₽</b></span>
+    <div className="product-card">
+      <img src={product.img} alt={product.title} className="product-image" />
+      <div className="product-details">
+        <h3 className="product-title">{product.title}</h3>
+        <p className="product-description">{product.description}</p>
+        <div className="product-footer">
+          <span className="product-price">{product.price} ₽</span>
+          <button className="add-to-cart-btn" onClick={handleAdd}>
+            {isAdded ? "Удалить" : "Добавить"}
+          </button>
+        </div>
       </div>
-      <Button className={'add-btn'} onClick={onAddHandler}>
-        Написать
-      </Button>
     </div>
   );
 };
+
 
 export default ProductItem;
