@@ -4,11 +4,15 @@ import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 
+
 const products = [
-    {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
-    {id: '3', title: 'Джинсы 2', price: 5000, description: 'Синего цвета, прямые'},
+    {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые', img: '/img/IMAGE 1.jpg'},
+    {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая', img: '/img/IMAGE 2.jpg'},
+    {id: '3', title: 'Джинсы 2', price: 5000, description: 'Синего цвета, прямые', img: '/img/IMAGE 3.jpg'},
 ]
+
+
+
 
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {

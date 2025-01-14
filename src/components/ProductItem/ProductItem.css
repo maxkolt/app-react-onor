@@ -7,7 +7,7 @@
 }
 
 
-.img {
+.product-img {
     width: 100%;
     background: lightgray;
     height: 100px;
@@ -15,8 +15,7 @@
 }
 
 .description {
-    font-size: 0.35em; /* Уменьшен размер текста */
-    color: #3b3939;
+    font-size: 0.4em;
 }
 
 .add-btn {
