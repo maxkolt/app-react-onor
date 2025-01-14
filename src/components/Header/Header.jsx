@@ -11,7 +11,7 @@ const Header = () => {
     <div className={'header'}>
       <Button onClick={onClose} className={'close-button'}>Закрыть</Button>
       <span className={'app-name'}>ONOR_Shop</span>
-      <link className={'username'}>{user?.username}</link>
+      <span className={'username'}>{user?.username}</span>
     </div>
   );
 };
