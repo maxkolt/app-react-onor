@@ -12,7 +12,7 @@
     width: calc(50% - 10px); /* Каждая карточка занимает половину ширины строки */
     max-width: 250px; /* Максимальная ширина карточки */
     background-color: rgb(39, 52, 89); /* Полностью непрозрачный */
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
@@ -26,7 +26,6 @@
 }
 
 /* Контейнер изображения */
-/* Контейнер изображения при увеличении */
 .image-container.zoomed {
     width: 100%;
     height: 100%; /* Занимает всю высоту карточки */
@@ -45,13 +44,13 @@
 
 /* Изображение при увеличении */
 .image-container.zoomed .product-image {
-    width: auto; /* Убираем ограничение ширины */
-    height: auto; /* Убираем ограничение высоты */
-    max-width: 90%; /* Ограничиваем изображение по ширине */
-    max-height: 90%; /* Ограничиваем изображение по высоте */
-    border-radius: 8px; /* Закруглённые углы */
-    transform: scale(1); /* Добавляем эффект увеличения */
-    transition: transform 0.3s ease; /* Плавная анимация увеличения */
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
 }
 
 /* Обычное состояние изображения */
@@ -60,16 +59,17 @@
     border-radius: 8px;
     width: 70%;
     object-fit: cover;
-    transition: transform 0.3s ease; /* Анимация для обычного состояния */
+    transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
-    /* Планшеты */
+    /* Адаптивные стили для планшетов */
     .product-image {
-        width: 80%; /* Увеличиваем ширину для лучшего отображения */
-    },
+        width: 80%;
+    }
     .product-card {
-       height: 360px;
+        height: 360px;
+        margin-bottom: 10px;
     }
 }
 
@@ -87,68 +87,58 @@
     color: #d7d7d7;
     line-height: 15px; /* Высота строки */
     margin: 10px 0; /* Отступы сверху и снизу */
-    padding: 0 5px; /* Горизонтальные отступы */
-    width: calc(100% - 10px); /* Ширина с учетом отступов */
-    box-sizing: border-box; /* Учитываем padding в общей ширине */
-    max-height: 36px; /* Ограничиваем высоту для двух строк текста (2 * line-height) */
-    overflow-y: auto; /* Добавляем прокрутку, если текст слишком длинный */
-    scrollbar-width: thin; /* Firefox */
+    padding: 0 5px 0 10px; /* Добавляем отступ справа */
+    width: calc(100% - 20px); /* Корректируем ширину для учета отступов */
+    box-sizing: border-box; /* Учитываем padding в расчете ширины */
+    max-height: 36px; /* Ограничиваем высоту для двух строк текста */
+    overflow-y: auto; /* Прокрутка для длинного текста */
+    scrollbar-width: thin; /* Стилизация скроллбара для Firefox */
 }
 
-/* Стили для скроллбара (только для WebKit-браузеров) */
-.product-description::-webkit-scrollbar {
-    width: 6px; /* Ширина скроллбара */
+
+.product-description.expanded {
+    max-height: 200px;
+    overflow: auto;
+    cursor: default;
 }
+
+/* Прокрутка для описания */
+.product-description::-webkit-scrollbar {
+     width: 2px;
+ }
 
 .product-description::-webkit-scrollbar-thumb {
-    background-color: #ccc; /* Цвет ползунка */
-    border-radius: 3px; /* Закругленные углы */
+    background-color: #ccc;
+    border-radius: 3px;
 }
 
 .product-description::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa; /* Цвет ползунка при наведении */
+    background-color: #aaa;
 }
-
-.product-description::-webkit-scrollbar {
-    width: 6px; /* Ширина скроллбара */
-}
-
-.product-description::-webkit-scrollbar-thumb {
-    background-color: #ccc; /* Цвет ползунка */
-    border-radius: 3px; /* Закругленные углы */
-}
-
-.product-description::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa; /* Цвет ползунка при наведении */
-}
-
 
 /* Заголовок продукта */
 .product-title {
     font-size: 16px;
     font-weight: bold;
-    color: #d8dff1; /* Всегда черный цвет */
-    padding: 3px 5px; /* Горизонтальные отступы */
+    color: #d8dff1;
+    padding: 0 10px;
     box-sizing: border-box;
-    max-height: 40px; /* Фиксируем высоту заголовка (две строки текста) */
-    overflow: hidden; /* Обрезаем текст, если он слишком длинный */
-    text-overflow: ellipsis; /* Добавляем многоточие для длинного текста */
-    white-space: nowrap; /* Запрещаем перенос текста */
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-
-/* Нижняя часть карточки */
 /* Нижняя часть карточки */
 .product-footer {
-    position: absolute; /* Закрепляем footer внизу карточки */
-    bottom: 10px; /* Отступ от нижнего края карточки */
-    left: 10px; /* Отступ слева */
-    right: 10px; /* Отступ справа */
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
     display: flex;
-    justify-content: space-between; /* Равномерное распределение кнопки и цены */
+    justify-content: space-between;
     align-items: center;
 }
-
 
 /* Цена */
 .product-price {
