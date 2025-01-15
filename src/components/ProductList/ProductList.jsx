@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
-import {useTelegram} from "../../hooks/useTelegram";
-import {useCallback, useEffect} from "react";
+
 
 
 const products = [
@@ -14,16 +13,13 @@ const products = [
 
 
 const App = () => {
-    const handleAdd = (product) => {
-        console.log("Товар добавлен в корзину:", product);
-    };
-
     return (
-      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+      <div className="cards-container">
           {products.map((product) => (
-            <ProductItem key={product.id} product={product} onAdd={handleAdd} />
+            <ProductItem key={product.id} product={product}/>
           ))}
       </div>
     );
 };
+
 export default App;
