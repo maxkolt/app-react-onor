@@ -11,7 +11,7 @@
 .product-card {
     width: calc(50% - 10px); /* Каждая карточка занимает половину ширины строки */
     max-width: 250px; /* Максимальная ширина карточки */
-    background-color: rgba(219, 230, 236, 0.2); /* Полупрозрачный фон */
+    background-color: rgba(252, 252, 252, 0.63); /* Полупрозрачный фон */
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
