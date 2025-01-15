@@ -5,7 +5,7 @@
     flex-wrap: wrap; /* Разрешаем перенос элементов */
     justify-content: space-between; /* Равномерное распределение карточек */
     gap: 10px; /* Отступы между карточками */
-    padding: 100px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
