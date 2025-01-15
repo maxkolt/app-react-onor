@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap; /* Разрешаем перенос карточек на новую строку */
     justify-content: space-between; /* Распределяем карточки с равными отступами */
-    gap: 10px; /* Расстояние между карточками */
     padding: 10px;
     box-sizing: border-box;
     width: 100%;
@@ -12,7 +11,7 @@
 .product-card {
     width: calc(50% - 10px); /* Каждая карточка занимает половину ширины строки */
     max-width: 250px; /* Максимальная ширина карточки */
-    background-color: #c5e1f1;
+    background-color: #dbe6ec;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -64,9 +63,13 @@
     transition: transform 0.3s ease; /* Анимация для обычного состояния */
 }
 
-@media (max-width: 768px) { /* Планшеты */
+@media (max-width: 768px) {
+    /* Планшеты */
     .product-image {
-        width: 85%; /* Увеличиваем ширину для лучшего отображения */
+        width: 80%; /* Увеличиваем ширину для лучшего отображения */
+    },
+    .product-card {
+       height: 360px;
     }
 }
 
@@ -134,7 +137,6 @@
 }
 
 
-
 /* Нижняя часть карточки */
 /* Нижняя часть карточки */
 .product-footer {
@@ -152,13 +154,13 @@
 .product-price {
     font-size: 18px;
     font-weight: bold;
-    color: #007bff;
+    color: #5490d2;
 }
 
 /* Кнопка */
 .write-button {
-    background-color: #007bff;
-    color: #fff;
+    background: linear-gradient(90deg, #027dbb, #005f99);
+    color: #e0dfdf;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
