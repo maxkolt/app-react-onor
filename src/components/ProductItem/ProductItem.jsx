@@ -2,19 +2,14 @@ import React, { useState } from "react";
 import "./ProductItem.css";
 
 const ProductItem = ({ product }) => {
-  const [isZoomed, setIsZoomed] = useState(false); // Состояние для увеличения изображения
-  const [isExpanded, setIsExpanded] = useState(false); // Состояние для раскрытия описания
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const handleWrite = () => {
     window.location.href = "https://t.me/max12kolt";
   };
 
   const handleImageClick = () => {
-    setIsZoomed(!isZoomed); // Переключение состояния увеличения изображения
-  };
-
-  const handleDescriptionClick = () => {
-    setIsExpanded(!isExpanded); // Переключение состояния (свернуто/развернуто)
+    setIsZoomed(!isZoomed);
   };
 
   return (
@@ -28,10 +23,7 @@ const ProductItem = ({ product }) => {
       {!isZoomed && (
         <div className="product-details">
           <h3 className="product-title">{product.title}</h3>
-          <div
-            className={`product-description ${isExpanded ? "expanded" : ""}`}
-            onClick={handleDescriptionClick}
-          >
+          <div className="product-description">
             {product.description}
           </div>
           <div className="product-footer">
