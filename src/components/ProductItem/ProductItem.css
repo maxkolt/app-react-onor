@@ -11,7 +11,7 @@
 .product-card {
     width: calc(50% - 10px); /* Каждая карточка занимает половину ширины строки */
     max-width: 250px; /* Максимальная ширина карточки */
-    background-color: rgba(252, 252, 252, 0.63); /* Полупрозрачный фон */
+    background-color: rgb(31, 41, 70); /* Полностью непрозрачный */
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -84,7 +84,7 @@
 /* Описание продукта */
 .product-description {
     font-size: 14px;
-    color: #666;
+    color: #949393;
     line-height: 15px; /* Высота строки */
     margin: 10px 0; /* Отступы сверху и снизу */
     padding: 0 5px; /* Горизонтальные отступы */
@@ -127,7 +127,7 @@
 .product-title {
     font-size: 16px;
     font-weight: bold;
-    color: #1f1818; /* Всегда черный цвет */
+    color: #d8dff1; /* Всегда черный цвет */
     padding: 3px 5px; /* Горизонтальные отступы */
     box-sizing: border-box;
     max-height: 40px; /* Фиксируем высоту заголовка (две строки текста) */
