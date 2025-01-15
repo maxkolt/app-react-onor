@@ -10,6 +10,7 @@
 }
 
 .product-card {
+    height: 280px;
     flex: 1 1 calc(50% - 20px); /* Карточки занимают 50% ширины минус отступы */
     max-width: calc(50% - 20px); /* Гарантируем, что ширина не превышает 50% */
     display: flex;
@@ -45,17 +46,16 @@
     transition: all 0.3s ease;
 }
 
-/* Увеличение изображения при нажатии */
 .image-container.zoomed {
     width: 100%;
-    height: auto;
-    position: absolute;
+    height: auto; /* Изображение займёт доступное пространство карточки */
+    position: absolute; /* Покрывает всю карточку */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон для выделения */
+    z-index: 100; /* Выводим поверх других элементов */
+    background-color: rgba(0, 0, 0, 0.8); /* Тёмный фон для выделения */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,8 +73,8 @@
     width: auto;
     height: auto;
     max-width: 90%;
-    max-height: 90%;
-    transform: scale(1);
+    max-height: 90%; /* Чтобы изображение не выходило за границы карточки */
+    transform: scale(1); /* Увеличиваем изображение */
     border-radius: 8px;
 }
 
