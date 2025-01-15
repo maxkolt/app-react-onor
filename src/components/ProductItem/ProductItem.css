@@ -1,39 +1,38 @@
 /* Общий стиль карточки background-color: #c5d6de;*/
-/* Контейнер для всех карточек */
 .cards-container {
     display: flex;
-    flex-wrap: wrap; /* Разрешаем перенос элементов */
-    justify-content: space-between; /* Равномерное распределение карточек */
-    gap: 10px; /* Отступы между карточками */
+    flex-wrap: wrap; /* Позволяет перенос элементов на следующую строку */
+    justify-content: space-between; /* Равномерное распределение */
+    gap: 10px; /* Расстояние между карточками */
     padding: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+    width: 100%; /* Занимаем всю доступную ширину */
 }
 
-/* Карточки продукта */
 .product-card {
-    width: calc(50% - 10px); /* Каждая карточка занимает половину ширины строки */
-    max-width: 250px; /* Ограничение максимальной ширины */
+    flex: 1 1 calc(50% - 20px); /* Карточки занимают 50% ширины минус отступы */
+    max-width: calc(50% - 20px); /* Гарантируем, что ширина не превышает 50% */
     display: flex;
-    height: 290px;
     flex-direction: column;
     align-items: center;
     background-color: #c5d6de;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 5px 0;
+    margin: 0; /* Убираем внешние отступы */
     padding: 7px;
     text-align: center;
     position: relative;
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
 }
 
 /* Адаптивность для мобильных устройств */
 @media screen and (max-width: 768px) {
     .product-card {
-        width: 100%; /* В одну колонку на узких экранах */
+        flex: 1 1 100%; /* Карточки переходят в одну колонку на узких экранах */
+        max-width: 100%; /* Гарантируем, что занимают всю ширину */
     }
 }
-
 
 /* Контейнер изображения */
 .image-container {
