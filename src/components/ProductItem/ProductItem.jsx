@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProductItem.css";
 
-const ProductItem = ({ product, onAdd }) => {
+const ProductItem = ({ product }) => {
   const [isZoomed, setIsZoomed] = useState(false);
 
   const handleWrite = () => {
@@ -20,18 +20,20 @@ const ProductItem = ({ product, onAdd }) => {
       >
         <img src={product.img} alt={product.title} className="product-image" />
       </div>
-      <div className="product-details">
-        <h3 className="product-title">{product.title}</h3>
-        <div className="product-description">
-          {product.description}
+      {!isZoomed && (
+        <div className="product-details">
+          <h3 className="product-title">{product.title}</h3>
+          <div className="product-description">
+            {product.description}
+          </div>
+          <div className="product-footer">
+            <span className="product-price">{product.price} ₽</span>
+            <button className="write-button" onClick={handleWrite}>
+              Написать
+            </button>
+          </div>
         </div>
-        <div className="product-footer">
-          <span className="product-price">{product.price} ₽</span>
-          <button className="write-button" onClick={handleWrite}>
-            Написать
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
