@@ -6,11 +6,11 @@
     gap: 10px; /* Расстояние между карточками */
     padding: 10px;
     box-sizing: border-box; /* Учитываем padding и border в ширине */
-    width: 100%; /* Занимаем всю доступную ширину */
+    width: 80%; /* Занимаем всю доступную ширину */
 }
 
 .product-card {
-    height: 280px;
+    height: 260px;
     flex: 1 1 calc(50% - 20px); /* Карточки занимают 50% ширины минус отступы */
     max-width: calc(50% - 20px); /* Гарантируем, что ширина не превышает 50% */
     display: flex;
